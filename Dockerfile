@@ -5,7 +5,7 @@ RUN yarn
 COPY . ./
 RUN yarn build
 
-FROM node:16-alpine3.14 as base
+FROM node:18-alpine3.14 as base
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=build-deps /build/node_modules ./node_modules
